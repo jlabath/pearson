@@ -1,3 +1,6 @@
+// Package pearson implements Pearson hash function.
+// See
+// https://en.wikipedia.org/wiki/Pearson_hashing
 package pearson
 
 import "hash"
@@ -64,14 +67,17 @@ func newPh(size int) hash.Hash {
 	return h
 }
 
+//New returns a new 8-bit Pearson hash.Hash.
 func New() hash.Hash {
 	return newPh(1)
 }
 
+//New16 returns a new 16-bit Pearson hash.Hash.
 func New16() hash.Hash {
 	return newPh(2)
 }
 
+//New24 returns a new 24-bit Pearson hash.Hash.
 func New24() hash.Hash {
 	return newPh(3)
 }
